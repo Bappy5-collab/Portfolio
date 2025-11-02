@@ -4,7 +4,7 @@ import Footer from "../../Footer/Footer";
 
 const Main = () => {
     return (
-        <div className="">
+        <div className="scroll-smooth">
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>
