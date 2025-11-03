@@ -26,7 +26,7 @@ const Project = () => {
             title: "Trip Fables",
             image: "https://i.ibb.co/SXtyRrSW/Screenshot-2025-06-23-164330.png",
             description: "A Travel Agency website.",
-            liveLink: "https://trips-fables.web.app",
+            liveLink: "https://trips-fables.vercel.app/",
             codeLink: "https://github.com/chandonkumar23/Trips-Fables-client-site/tree/main/src",
             status: "NEW",
         },
