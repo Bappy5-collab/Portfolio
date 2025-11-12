@@ -11,10 +11,18 @@ import { motion } from "framer-motion";
 
 const projectData = [
   {
+    title: "Eco AI",
+    description:
+      "AI-powered eco-friendly web application platform with advanced features and modern design.",
+    img: "https://i.ibb.co.com/PvVQ1hkM/Screenshot-2025-11-12-213604.png",
+    code: "https://github.com/Bappy5-collab/E-ai",
+    live: "https://eco-ai-lime.vercel.app/",
+  },
+  {
     title: "Trips Fables",
     description:
       "Through this website, users can easily find and book their favorite travel destinations. Users can register/login, manage wishlists, and access a user dashboard. Admins can add sightseeing locations.",
-    img: "https://i.postimg.cc/qRPMSJyY/screencapture-assignment-12-17c04-web-app-2023-12-11-11-19-45.png",
+    img: "https://i.ibb.co.com/SXKBdt9N/Screenshot-2025-11-12-214126.png",
     code: "https://github.com/chandonkumar23/Trips-Fables-client-site",
     live: "https://assignment-12-17c04.web.app/",
   },

@@ -4,6 +4,15 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 const Project = () => {
     const projectData = [
         {
+            id: 6,
+            title: "Eco AI",
+            image: "https://i.ibb.co.com/PvVQ1hkM/Screenshot-2025-11-12-213604.png",
+            description: "AI-powered eco-friendly web application platform.",
+            liveLink: "https://eco-ai-lime.vercel.app/",
+            codeLink: "https://github.com/Bappy5-collab/E-ai",
+            status: "NEW",
+        },
+        {
             id: 5,
             title: "Perfect AI",
             image: "https://i.ibb.co.com/4RYHDcgY/Screenshot-2025-10-31-185529.png",
@@ -24,7 +33,7 @@ const Project = () => {
         {
             id: 2,
             title: "Trip Fables",
-            image: "https://i.ibb.co/SXtyRrSW/Screenshot-2025-06-23-164330.png",
+            image: "https://i.ibb.co.com/SXKBdt9N/Screenshot-2025-11-12-214126.png",
             description: "A Travel Agency website.",
             liveLink: "https://trips-fables.vercel.app/",
             codeLink: "https://github.com/chandonkumar23/Trips-Fables-client-site/tree/main/src",

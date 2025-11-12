@@ -1,9 +1,7 @@
-import Resume from "../pages/Resume";
 import About from "../pages/Services/About/About";
 import Banner from "../pages/Services/Banner/Banner";
 import Contact from "../pages/Services/Contact/Contact";
 import Project from "../pages/Services/Projects/NavProject/Project";
-import Projects from "../pages/Services/Projects/Projects";
 import Services from "../pages/Services/Services";
 import { motion } from "framer-motion";
 
