@@ -19,8 +19,12 @@ const Footer = () => {
           >
             <motion.img
               className="h-[70px] drop-shadow-lg"
-              src="https://i.postimg.cc/R0VF51Mt/H-1-removebg-preview.png"
-              alt="Logo"
+              src="public/images/logo.webp"
+              alt="Chandon Kumar personal logo"
+              width="70"
+              height="70"
+              loading="lazy"
+              decoding="async"
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
@@ -72,7 +76,7 @@ const Footer = () => {
 
         {/* Bottom border with gradient */}
         <motion.div
-          className="mt-8 pt-8 border-t border-blue-500/20 text-center"
+          className="mt-8 pt-8 border-t border-blue-500/20 text-center space-y-3"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -80,6 +84,9 @@ const Footer = () => {
         >
           <p className="text-gray-500 text-sm">
             Designed & Developed with <span className="text-cyan-400">♥</span> by Chandon Kumar
+          </p>
+          <p className="text-gray-400 text-xs sm:text-sm">
+            Keywords: Frontend Developer · React Developer · Next.js Developer · MERN Stack Developer · JavaScript Developer · Hire Frontend Developer · Portfolio Website
           </p>
         </motion.div>
       </div>

@@ -6,7 +6,7 @@ const Project = () => {
         {
             id: 6,
             title: "Eco AI",
-            image: "https://i.ibb.co.com/PvVQ1hkM/Screenshot-2025-11-12-213604.png",
+            image: "/images/project-eco-ai.webp",
             description: "AI-powered eco-friendly web application platform.",
             liveLink: "https://eco-ai-lime.vercel.app/",
             codeLink: "https://github.com/Bappy5-collab/E-ai",
@@ -15,7 +15,7 @@ const Project = () => {
         {
             id: 5,
             title: "Perfect AI",
-            image: "https://i.ibb.co.com/4RYHDcgY/Screenshot-2025-10-31-185529.png",
+            image: "/images/project-perfect-ai.webp",
             description: "AI-powered web application platform.",
             liveLink: "https://www.perfect-ai.com",
             codeLink: "",
@@ -24,7 +24,7 @@ const Project = () => {
         {
             id: 1,
             title: "DVS",
-            image: "https://i.ibb.co/hxGY0TPK/Screenshot-2025-06-23-165920.png",
+            image: "/images/project-dvs.webp",
             description: "Electronic voting system web application.",
             liveLink: "https://electronic-voting-system-beta.vercel.app",
             codeLink: "https://github.com/dreamwarrior6m/Electronic-Voting-System",
@@ -33,7 +33,7 @@ const Project = () => {
         {
             id: 2,
             title: "Trip Fables",
-            image: "https://i.ibb.co.com/SXKBdt9N/Screenshot-2025-11-12-214126.png",
+            image: "/images/project-trip-fables.webp",
             description: "A Travel Agency website.",
             liveLink: "https://trips-fables.vercel.app/",
             codeLink: "https://github.com/chandonkumar23/Trips-Fables-client-site/tree/main/src",
@@ -42,7 +42,7 @@ const Project = () => {
         {
             id: 3,
             title: "RestuPOS",
-            image: "https://i.ibb.co/4Z72CNHs/Screenshot-2025-06-23-165625.png",
+            image: "/images/project-restupos.webp",
             description: "A Restaurant pos website.",
             liveLink: "https://restupos-24070.web.app",
             codeLink: "https://github.com/chandonkumar23/Restu-POs-Client",
@@ -51,7 +51,7 @@ const Project = () => {
         {
             id: 4,
             title: "Furns",
-            image: "https://i.ibb.co/h1L7zt6G/Screenshot-2025-06-23-170313.png",
+            image: "/images/project-furns.webp",
             description: "E-commerce Landing page.",
             liveLink: "https://restupos-24070.web.app",
             codeLink: "https://github.com/chandonkumar23/Restu-POs-Client",
@@ -69,11 +69,11 @@ const Project = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4">
                         <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                             My Projects
                         </span>
-                    </h1>
+                    </h2>
                     <motion.div
                         className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mt-4 rounded-full"
                         initial={{ width: 0 }}
@@ -82,7 +82,7 @@ const Project = () => {
                         transition={{ duration: 0.8, delay: 0.3 }}
                     />
                     <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-                        Showcasing my recent work and creative solutions
+                        Showcasing my recent React Developer, Next.js Developer, and MERN Stack Developer work along with creative solutions for fast-scaling teams.
                     </p>
                 </motion.div>
 
@@ -125,6 +125,8 @@ const ProjectCard = ({ project, index }) => (
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
                 whileHover={{ scale: 1.15, rotate: 2 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
             />

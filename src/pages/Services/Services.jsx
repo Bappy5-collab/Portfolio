@@ -49,11 +49,11 @@ const Services = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold mb-4">
           <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
             My Services
           </span>
-        </h1>
+        </h2>
         <motion.div
           className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mt-4 rounded-full"
           initial={{ width: 0 }}
@@ -62,7 +62,7 @@ const Services = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         />
         <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-          Crafting digital experiences that combine stunning design with powerful functionality
+          Crafting digital experiences that combine stunning design with powerful functionality for startups that want elite React Developer, Next.js Developer, and MERN Stack Developer expertise.
         </p>
       </motion.div>
 

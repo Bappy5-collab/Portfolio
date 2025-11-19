@@ -14,7 +14,7 @@ const projectData = [
     title: "Eco AI",
     description:
       "AI-powered eco-friendly web application platform with advanced features and modern design.",
-    img: "https://i.ibb.co.com/PvVQ1hkM/Screenshot-2025-11-12-213604.png",
+    img: "/images/project-eco-ai.webp",
     code: "https://github.com/Bappy5-collab/E-ai",
     live: "https://eco-ai-lime.vercel.app/",
   },
@@ -22,7 +22,7 @@ const projectData = [
     title: "Trips Fables",
     description:
       "Through this website, users can easily find and book their favorite travel destinations. Users can register/login, manage wishlists, and access a user dashboard. Admins can add sightseeing locations.",
-    img: "https://i.ibb.co.com/SXKBdt9N/Screenshot-2025-11-12-214126.png",
+    img: "/images/project-trip-fables.webp",
     code: "https://github.com/chandonkumar23/Trips-Fables-client-site",
     live: "https://assignment-12-17c04.web.app/",
   },
@@ -30,7 +30,7 @@ const projectData = [
     title: "CHOICE Events",
     description:
       "An educational event management platform with private routes, responsive design, user authentication, and secure password validation. Features include blog access, team section, and alerts on auth actions.",
-    img: "https://i.postimg.cc/G3TQZdZj/screencapture-localhost-5175-2023-12-11-11-28-36.png",
+    img: "/images/project-dvs.webp",
     code: "https://github.com/chandonkumar23/Choice-event",
     live: "https://event-management-8ba41.web.app/",
   },
@@ -38,7 +38,7 @@ const projectData = [
     title: "Handy",
     description:
       "A home service exchange site where users can post, browse, and book services. Features popular services, details view, conditional access based on auth, and booking functionality.",
-    img: "https://i.postimg.cc/26bS0bbh/screencapture-assignment-7bce6-web-app-2023-12-11-11-21-40.png",
+    img: "/images/project-restupos.webp",
     code: "https://github.com/chandonkumar23/Handy-client-site",
     live: "https://assignment-7bce6.web.app",
   },
@@ -80,6 +80,8 @@ const Projects = () => {
                     className="h-[300px] w-full object-cover rounded-md shadow-md"
                     src={project.img}
                     alt={project.title}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="space-y-4">

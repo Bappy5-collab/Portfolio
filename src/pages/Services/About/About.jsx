@@ -1,6 +1,5 @@
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { FaBriefcase, FaCode, FaRocket } from "react-icons/fa";
 import "react-tabs/style/react-tabs.css";
 
@@ -13,7 +12,7 @@ const AboutMe = () => {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
       
       <div className="relative z-10">
-        <motion.h1
+        <motion.h2
           className="text-4xl md:text-6xl font-bold mb-6 text-center"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,7 +29,7 @@ const AboutMe = () => {
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.3 }}
           />
-        </motion.h1>
+        </motion.h2>
 
         <div className="max-w-[1200px] mx-auto mt-16">
           {/* Top Section - Image and Intro */}
@@ -47,8 +46,10 @@ const AboutMe = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 rounded-2xl opacity-75 blur-sm" />
               <motion.img
                 className="relative border-4 border-cyan-400/50 shadow-2xl rounded-2xl transform hover:scale-105 transition-transform duration-300 w-full h-auto object-cover"
-                src="https://i.ibb.co.com/99vzSqFW/537363184-1996504304425628-712554029153891512-n-1.jpg"
-              alt="Profile"
+                src="/images/about-portrait.webp"
+                alt="Chandon Kumar working as a Frontend Developer"
+                loading="lazy"
+                decoding="async"
                 whileHover={{ scale: 1.05, rotateY: 5 }}
               />
               {/* Floating badges */}
@@ -74,13 +75,11 @@ const AboutMe = () => {
                   Hello!
                 </span>
                 <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
-                  I'm <span className="text-cyan-400 font-bold">Chandon Kumar</span> — a web developer from Bangladesh with <span className="text-cyan-400 font-bold">3+ years of experience</span> creating modern websites that combine clean design and powerful functionality.
+                  I'm <span className="text-cyan-400 font-bold">Chandon Kumar</span> — a Frontend Developer from Bangladesh with <span className="text-cyan-400 font-bold">3+ years of experience</span> creating modern websites that combine clean design and powerful functionality.
                 </p>
               </div>
               <p className="text-lg text-gray-400 leading-relaxed">
-                I specialize in web design and development, transforming creative ideas into 
-                functional and beautiful digital experiences. My passion for coding drives me 
-                to build innovative solutions and complete successful projects.
+                As a React Developer, Next.js Developer, and JavaScript Developer, I specialize in transforming creative ideas into functional, accessible, and lightning-fast digital experiences. My passion for coding drives me to build innovative MERN stack solutions, reusable UI systems, and Portfolio Website experiences that convert visitors into customers for ambitious brands.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <motion.div
@@ -201,32 +200,36 @@ const AboutMe = () => {
                         transition={{ duration: 0.6, delay: 0.3 }}
                       >
                         {[
-                          { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React", delay: 0 },
-                          { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", alt: "Next.js", delay: 0.1 },
-                          { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", alt: "TypeScript", delay: 0.2 },
-                          { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg", alt: "Material UI", delay: 0.3 },
-                          { src: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg", alt: "Tailwind", delay: 0.4 },
+                          { src: "/images/icons/icon-react-devicon.svg", alt: "React", delay: 0 },
+                          { src: "/images/icons/icon-nextjs.svg", alt: "Next.js", delay: 0.1 },
+                          { src: "/images/icons/icon-typescript.svg", alt: "TypeScript", delay: 0.2 },
+                          { src: "/images/icons/icon-materialui.svg", alt: "Material UI", delay: 0.3 },
+                          { src: "/images/icons/icon-tailwind-svg.svg", alt: "Tailwind", delay: 0.4 },
                         ].map((tech, idx) => (
                           <motion.img
                             key={idx}
                             className="h-10 w-10 object-contain"
                             src={tech.src}
                             alt={tech.alt}
+                        loading="lazy"
+                        decoding="async"
                             initial={{ opacity: 0, scale: 0 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: tech.delay, type: "spring" }}
-                            whileHover={{ scale: 1.3, rotate: [0, -10, 10, -10, 0], z: 50 }}
-                            animate={{
-                              y: [0, -5, 0],
-                            }}
                             transition={{
+                              duration: 0.4,
+                              delay: tech.delay,
+                              type: "spring",
                               y: {
                                 duration: 2 + idx * 0.2,
                                 repeat: Infinity,
                                 ease: "easeInOut",
                                 delay: idx * 0.1,
                               },
+                            }}
+                            whileHover={{ scale: 1.3, rotate: [0, -10, 10, -10, 0], z: 50 }}
+                            animate={{
+                              y: [0, -5, 0],
                             }}
                           />
                         ))}
@@ -310,31 +313,35 @@ const AboutMe = () => {
                         transition={{ duration: 0.6, delay: 0.5 }}
                       >
                         {[
-                          { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "Node.js", delay: 0 },
-                          { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", alt: "Express", delay: 0.1 },
-                          { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", alt: "MongoDB", delay: 0.2 },
-                          { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", alt: "Git", delay: 0.3 },
+                          { src: "/images/icons/icon-nodejs.svg", alt: "Node.js", delay: 0 },
+                          { src: "/images/icons/icon-express.svg", alt: "Express", delay: 0.1 },
+                          { src: "/images/icons/icon-mongodb.svg", alt: "MongoDB", delay: 0.2 },
+                          { src: "/images/icons/icon-git.svg", alt: "Git", delay: 0.3 },
                         ].map((tech, idx) => (
                           <motion.img
                             key={idx}
                             className="h-10 w-10 object-contain"
                             src={tech.src}
                             alt={tech.alt}
+                            loading="lazy"
+                            decoding="async"
                             initial={{ opacity: 0, scale: 0 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: tech.delay + 0.5, type: "spring" }}
-                            whileHover={{ scale: 1.3, rotate: [0, 10, -10, 10, 0], z: 50 }}
-                            animate={{
-                              y: [0, -5, 0],
-                            }}
                             transition={{
+                              duration: 0.4,
+                              delay: tech.delay + 0.5,
+                              type: "spring",
                               y: {
                                 duration: 2 + idx * 0.2,
                                 repeat: Infinity,
                                 ease: "easeInOut",
                                 delay: idx * 0.1,
                               },
+                            }}
+                            whileHover={{ scale: 1.3, rotate: [0, 10, -10, 10, 0], z: 50 }}
+                            animate={{
+                              y: [0, -5, 0],
                             }}
                           />
                         ))}
