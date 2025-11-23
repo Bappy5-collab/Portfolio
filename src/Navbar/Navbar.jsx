@@ -225,12 +225,8 @@ const Navbar = () => {
               />
               <img
                 className="relative h-[50px] sm:h-[60px] drop-shadow-2xl transition-all duration-300 group-hover:drop-shadow-cyan-500/50"
-                src="public/images/logo.webp"
-                alt="Chandon Kumar portfolio logo"
-                width="60"
-                height="60"
-                loading="eager"
-                decoding="async"
+                src="https://i.postimg.cc/R0VF51Mt/H-1-removebg-preview.png"
+                alt="Logo"
               />
             </div>
           </motion.a>

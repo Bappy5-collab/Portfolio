@@ -6,7 +6,6 @@ import "swiper/css/effect-flip";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { EffectFlip, Pagination, Navigation } from "swiper/modules";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const projectData = [
@@ -14,7 +13,7 @@ const projectData = [
     title: "Eco AI",
     description:
       "AI-powered eco-friendly web application platform with advanced features and modern design.",
-    img: "/images/project-eco-ai.webp",
+    img: "https://i.ibb.co.com/PvVQ1hkM/Screenshot-2025-11-12-213604.png",
     code: "https://github.com/Bappy5-collab/E-ai",
     live: "https://eco-ai-lime.vercel.app/",
   },
@@ -22,7 +21,7 @@ const projectData = [
     title: "Trips Fables",
     description:
       "Through this website, users can easily find and book their favorite travel destinations. Users can register/login, manage wishlists, and access a user dashboard. Admins can add sightseeing locations.",
-    img: "/images/project-trip-fables.webp",
+    img: "https://i.ibb.co.com/SXKBdt9N/Screenshot-2025-11-12-214126.png",
     code: "https://github.com/chandonkumar23/Trips-Fables-client-site",
     live: "https://assignment-12-17c04.web.app/",
   },
@@ -30,7 +29,7 @@ const projectData = [
     title: "CHOICE Events",
     description:
       "An educational event management platform with private routes, responsive design, user authentication, and secure password validation. Features include blog access, team section, and alerts on auth actions.",
-    img: "/images/project-dvs.webp",
+    img: "https://i.postimg.cc/G3TQZdZj/screencapture-localhost-5175-2023-12-11-11-28-36.png",
     code: "https://github.com/chandonkumar23/Choice-event",
     live: "https://event-management-8ba41.web.app/",
   },
@@ -38,7 +37,7 @@ const projectData = [
     title: "Handy",
     description:
       "A home service exchange site where users can post, browse, and book services. Features popular services, details view, conditional access based on auth, and booking functionality.",
-    img: "/images/project-restupos.webp",
+    img: "https://i.postimg.cc/26bS0bbh/screencapture-assignment-7bce6-web-app-2023-12-11-11-21-40.png",
     code: "https://github.com/chandonkumar23/Handy-client-site",
     live: "https://assignment-7bce6.web.app",
   },
@@ -80,8 +79,6 @@ const Projects = () => {
                     className="h-[300px] w-full object-cover rounded-md shadow-md"
                     src={project.img}
                     alt={project.title}
-                    loading="lazy"
-                    decoding="async"
                   />
                 </div>
                 <div className="space-y-4">
@@ -90,22 +87,24 @@ const Projects = () => {
                   </h2>
                   <p className="text-justify text-white/90">{project.description}</p>
                   <div className="flex gap-4">
-                    <Link
-                      to={project.code}
+                    <a
+                      href={project.code}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1 hover:text-green-400 transition"
                     >
                       <FaGithub className="text-2xl" />
                       <span>View Code</span>
-                    </Link>
-                    <Link
-                      to={project.live}
+                    </a>
+                    <a
+                      href={project.live}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1 hover:text-green-400 transition"
                     >
                       <LiaEyeSolid className="text-2xl" />
                       <span>Live Preview</span>
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </motion.div>

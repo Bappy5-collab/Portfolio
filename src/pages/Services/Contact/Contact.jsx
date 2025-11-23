@@ -47,11 +47,11 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 px-2">
           <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
             Contact Me
           </span>
-        </h2>
+        </h1>
         <motion.div
           className="h-1 w-16 sm:w-24 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mt-3 sm:mt-4 rounded-full"
           initial={{ width: 0 }}
@@ -60,7 +60,7 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         />
         <p className="text-gray-400 mt-4 sm:mt-6 text-base sm:text-lg max-w-2xl mx-auto px-2">
-          Let's connect and bring your ideas to life — whether you're scaling a Portfolio Website, hiring a Frontend Developer, or shipping your next React or Next.js release.
+          Let's connect and bring your ideas to life
         </p>
       </motion.div>
 

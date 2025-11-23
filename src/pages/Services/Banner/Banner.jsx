@@ -27,7 +27,7 @@ const Banner = () => {
       <motion.div
         className="absolute inset-0 bg-center bg-cover opacity-20"
         style={{
-          backgroundImage: "url('/images/hero-bg.webp')",
+          backgroundImage: "url('https://i.postimg.cc/PNsW2VnY/Chandon-kumar-6.png')",
           zIndex: 0,
         }}
         animate={{ scale: [1, 1.1, 1] }}
@@ -151,14 +151,6 @@ const Banner = () => {
               repeat={Infinity}
             />
           </motion.div>
-          <motion.p
-            className="text-gray-300/90 text-base md:text-lg leading-relaxed max-w-xl"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            Hire a Frontend Developer, React Developer, or Next.js Developer who obsesses over performance, accessibility, and measurable growth for every Portfolio Website.
-          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -221,10 +213,8 @@ const Banner = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-75 blur-xl animate-pulse" />
             <motion.img
               className="relative rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] border-4 border-cyan-400/50 shadow-2xl object-cover z-10"
-              src="/images/hero-portrait.webp"
-              alt="Portrait of Frontend Developer Chandon Kumar"
-              loading="eager"
-              decoding="async"
+              src="https://i.ibb.co/0py233V3/Untitled-Project.jpg"
+              alt="Chandon Kumar"
               whileHover={{ 
                 boxShadow: "0 0 50px rgba(59, 130, 246, 0.5)",
                 borderColor: "rgba(59, 130, 246, 0.8)"

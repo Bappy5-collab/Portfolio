@@ -1,10 +1,12 @@
-import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import Resume from "../pages/Resume";
 import About from "../pages/Services/About/About";
 import Banner from "../pages/Services/Banner/Banner";
 import Contact from "../pages/Services/Contact/Contact";
 import Project from "../pages/Services/Projects/NavProject/Project";
+import Projects from "../pages/Services/Projects/Projects";
 import Services from "../pages/Services/Services";
+import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
 
 const Home = () => {
     return (
