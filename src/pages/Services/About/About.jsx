@@ -215,12 +215,14 @@ const AboutMe = () => {
                             initial={{ opacity: 0, scale: 0 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: tech.delay, type: "spring" }}
                             whileHover={{ scale: 1.3, rotate: [0, -10, 10, -10, 0], z: 50 }}
                             animate={{
                               y: [0, -5, 0],
                             }}
                             transition={{
+                              duration: 0.4,
+                              delay: tech.delay,
+                              type: "spring",
                               y: {
                                 duration: 2 + idx * 0.2,
                                 repeat: Infinity,
@@ -323,12 +325,14 @@ const AboutMe = () => {
                             initial={{ opacity: 0, scale: 0 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: tech.delay + 0.5, type: "spring" }}
                             whileHover={{ scale: 1.3, rotate: [0, 10, -10, 10, 0], z: 50 }}
                             animate={{
                               y: [0, -5, 0],
                             }}
                             transition={{
+                              duration: 0.4,
+                              delay: tech.delay + 0.5,
+                              type: "spring",
                               y: {
                                 duration: 2 + idx * 0.2,
                                 repeat: Infinity,
