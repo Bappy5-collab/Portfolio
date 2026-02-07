@@ -208,7 +208,7 @@ const Banner = () => {
             className="relative"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-          >
+          >   
             {/* Glowing border effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-75 blur-xl animate-pulse" />
             <motion.img
