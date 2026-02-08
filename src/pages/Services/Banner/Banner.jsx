@@ -208,12 +208,12 @@ const Banner = () => {
             className="relative"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-          >   
+          >
             {/* Glowing border effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-75 blur-xl animate-pulse" />
             <motion.img
               className="relative rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] border-4 border-cyan-400/50 shadow-2xl object-cover z-10"
-              src="public/images/chandon.png"
+              src="https://i.ibb.co.com/535jf96/chandon-fiver-1-Picsart-Background-Changer.png"
               alt="Chandon Kumar"
               whileHover={{ 
                 boxShadow: "0 0 50px rgba(59, 130, 246, 0.5)",
