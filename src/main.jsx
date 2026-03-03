@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <meta name="google-site-verification" content="ulS3lg_Kpcfo6UU6flUpefYomLJ3wrL8pVuXvVlRNQk" />
       </head>
 
-      <div className="bg-[#2f2477]">
+      <div className="min-h-screen bg-surface-900">
         <RouterProvider router={router} />
       </div>
     </HelmetProvider>
