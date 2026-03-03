@@ -1,266 +1,132 @@
-import { FaGithub } from "react-icons/fa6";
-import { FaFacebook } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa6";
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import Resume from "../../Resume";
-import { TypeAnimation } from 'react-type-animation';
-import SpiderAnimation from '../../../components/SpiderAnimation';
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
-const Banner = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+const socialLinks = [
+  { href: "https://github.com/Bappy5-collab", Icon: FaGithub, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/chandon-kumar-4033072a0/", Icon: FaLinkedin, label: "LinkedIn" },
+  { href: "https://www.facebook.com/chandonkumerbappy.chandonkumerbappy", Icon: FaFacebook, label: "Facebook" },
+];
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 100;
-      const y = (e.clientY / window.innerHeight - 0.5) * 100;
-      setMousePosition({ x, y });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+export default function Banner() {
+  const scrollTo = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <div id="home" className="mb-10 relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-      {/* Animated gradient background */}
-      <motion.div
-        className="absolute inset-0 bg-center bg-cover opacity-20"
-        style={{
-          backgroundImage: "url('https://i.postimg.cc/PNsW2VnY/Chandon-kumar-6.png')",
-          zIndex: 0,
-        }}
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-      />
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden"
+    >
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-surface-900 via-surface-800/50 to-surface-900 pointer-events-none" />
+      <div className="absolute top-1/4 -right-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 -left-32 w-96 h-96 bg-accent/5 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Animated gradient blobs with mouse parallax */}
-      <motion.div
-        className="absolute w-[800px] h-[800px] bg-blue-600 rounded-full filter blur-3xl opacity-30"
-        animate={{ 
-          scale: [1, 1.2, 1]
-        }}
-        transition={{ duration: 25, repeat: Infinity }}
-        style={{ 
-          top: '-300px', 
-          left: '-300px', 
-          zIndex: 0,
-          x: mousePosition.x * 0.5,
-          y: mousePosition.y * 0.5,
-        }}
-      />
-      <motion.div
-        className="absolute w-[700px] h-[700px] bg-cyan-500 rounded-full filter blur-3xl opacity-25"
-        animate={{ 
-          scale: [1, 1.1, 1]
-        }}
-        transition={{ duration: 30, repeat: Infinity }}
-        style={{ 
-          bottom: '-200px', 
-          right: '-200px', 
-          zIndex: 0,
-          x: mousePosition.x * -0.7,
-          y: mousePosition.y * -0.7,
-        }}
-      />
-      <motion.div
-        className="absolute w-[600px] h-[600px] bg-indigo-600 rounded-full filter blur-3xl opacity-20"
-        animate={{ 
-          scale: [1, 1.3, 1]
-        }}
-        transition={{ duration: 35, repeat: Infinity }}
-        style={{ 
-          top: '50%', 
-          left: '50%', 
-          zIndex: 0,
-          x: `calc(-50% + ${mousePosition.x * 0.3}px)`,
-          y: `calc(-50% + ${mousePosition.y * 0.3}px)`,
-        }}
-      />
-
-      {/* Spider Animation */}
-      <div className="absolute inset-0 z-[1]">
-        <SpiderAnimation />
-      </div>
-
-      {/* Animated grid pattern overlay with parallax */}
-      <motion.div 
-        className="absolute inset-0 z-[1] opacity-10"
-        style={{
-          x: mousePosition.x * 0.2,
-          y: mousePosition.y * 0.2,
-        }}
-      >
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-                          linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }} />
-      </motion.div>
-
-      {/* Content */}
-      <section className="relative z-10 container mx-auto px-6 py-16 grid lg:grid-cols-2 items-center gap-12 min-h-screen">
-        {/* Text Section */}
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="space-y-6"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+      <div className="container-narrow relative z-10 px-4 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Content */}
+        <div className="order-2 lg:order-1">
+          <motion.p
+            className="section-label text-accent mb-4"
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
+            transition={{ duration: 0.5 }}
           >
-            <span className="text-lg md:text-xl font-semibold text-cyan-400 mb-2 block">
-              Welcome to my Portfolio
-            </span>
-          </motion.div>
-
+            Full-Stack Developer
+          </motion.p>
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight tracking-tight mb-6"
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-extrabold text-white leading-tight"
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Hi, I'm
-            </span>
-            <br />
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent animate-pulse">
-              Chandon Kumar
-            </span>
+            Hi, I'm <span className="text-accent">Chandon Kumar</span>
           </motion.h1>
+          <motion.p
+            className="text-mute-400 text-lg max-w-prose leading-relaxed mb-8"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            I build modern web applications with React, Next.js, and the MERN stack. 
+            Focused on clean architecture, performance, and user experience for clients worldwide.
+          </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            className="flex flex-wrap gap-4 mb-10"
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-xl md:text-2xl mt-6 mb-8 text-gray-300 font-semibold h-12 flex items-center"
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <TypeAnimation
-              sequence={[
-                "MERN Stack Developer", 2000,
-                "Frontend Developer", 2000,
-                "Full Stack Developer", 2000,
-                "UI/UX Enthusiast", 2000
-              ]}
-              wrapper="span"
-              speed={50}
-              className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
-              repeat={Infinity}
-            />
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollTo("contact"); }}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-accent-600 transition-colors shadow-lg shadow-accent/20"
+            >
+              Hire Me
+            </a>
+            <button
+              type="button"
+              onClick={() => scrollTo("projects")}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-surface-600 text-white font-medium rounded-lg border border-white/10 hover:border-accent/50 hover:bg-surface-500 transition-colors"
+            >
+              View Projects
+            </button>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex items-center gap-5 text-3xl"
+            className="flex items-center gap-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <motion.a
-              href="https://github.com/Bappy5-collab"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-cyan-400 hover:text-cyan-300 transition-all duration-300 cursor-pointer"
-            >
-              <FaGithub />
-            </motion.a>
-            <motion.a
-              href="https://www.facebook.com/chandonkumerbappy.chandonkumerbappy"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: -5 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-blue-400 hover:text-blue-300 transition-all duration-300 cursor-pointer"
-            >
-              <FaFacebook />
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/chandon-kumar-4033072a0/"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="text-indigo-400 hover:text-indigo-300 transition-all duration-300 cursor-pointer"
-            >
-              <FaLinkedin />
-            </motion.a>
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Resume />
-            </motion.div>
-          </motion.div>
-        </motion.div>
-
-        {/* Image Section */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
-          animate={{ scale: 1, opacity: 1, rotate: 0 }}
-          transition={{ duration: 1, delay: 0.5, type: "spring", stiffness: 100 }}
-          className="flex justify-center lg:justify-end"
-        >
-          <motion.div
-            className="relative"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-          >
-            {/* Glowing border effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 opacity-75 blur-xl animate-pulse" />
-            <motion.img
-              className="relative rounded-full w-[300px] h-[300px] md:w-[400px] md:h-[400px] border-4 border-cyan-400/50 shadow-2xl object-cover z-10"
-              src="https://i.ibb.co.com/535jf96/chandon-fiver-1-Picsart-Background-Changer.png"
-              alt="Chandon Kumar"
-              whileHover={{ 
-                boxShadow: "0 0 50px rgba(59, 130, 246, 0.5)",
-                borderColor: "rgba(59, 130, 246, 0.8)"
-              }}
-            />
-            {/* Floating particles around image */}
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-2 h-2 bg-cyan-400 rounded-full"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  y: [0, -30, 0],
-                  opacity: [0.3, 1, 0.3],
-                  scale: [1, 1.5, 1],
-                }}
-                transition={{
-                  duration: 2 + Math.random(),
-                  repeat: Infinity,
-                  delay: Math.random() * 2,
-                }}
-              />
+            {socialLinks.map(({ href, Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-lg text-mute-400 hover:text-accent hover:bg-accent/10 transition-colors"
+                aria-label={label}
+              >
+                <Icon className="w-5 h-5" />
+              </a>
             ))}
           </motion.div>
-        </motion.div>
-      </section>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      >
-        <div className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center">
-          <motion.div
-            className="w-1 h-3 bg-cyan-400 rounded-full mt-2"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
         </div>
-      </motion.div>
-    </div>
-  );
-};
 
-export default Banner;
+        {/* Avatar */}
+        <motion.div
+          className="order-1 lg:order-2 flex justify-center lg:justify-end"
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="relative">
+            <div className="absolute inset-0 rounded-2xl bg-accent/20 blur-2xl scale-95" />
+            <img
+              src="https://i.ibb.co.com/535jf96/chandon-fiver-1-Picsart-Background-Changer.png"
+              alt="Chandon Kumar"
+              className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-2xl object-cover object-top shadow-card border border-white/5"
+            />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Scroll hint */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-mute-500"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+      >
+        <motion.span
+          className="w-6 h-10 rounded-full border-2 border-mute-500 flex flex-col items-center pt-2"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-mute-500" />
+        </motion.span>
+      </motion.div>
+    </section>
+  );
+}

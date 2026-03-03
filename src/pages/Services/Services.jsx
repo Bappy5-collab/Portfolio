@@ -1,203 +1,85 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { FaPlug, FaServer, FaCode, FaMobileAlt } from "react-icons/fa";
-import FloatingParticles from '../../components/FloatingParticles';
+import { FaCode, FaServer, FaPlug, FaMobileAlt, FaRobot, FaCloud } from "react-icons/fa";
 
 const services = [
   {
-    title: "API Integration",
-    description:
-      "Seamless integration of third-party APIs and RESTful services to connect your applications with external data sources. I specialize in creating robust API connections, handling authentication, error handling, and data transformation to ensure smooth communication between frontend and backend systems.",
-    icon: <FaPlug className="text-4xl" />,
-    gradient: "from-cyan-400 to-cyan-600",
-    borderColor: "border-cyan-400",
+    title: "Full-Stack Development",
+    description: "End-to-end web applications with React, Next.js, Node.js, and MongoDB. From API design to responsive UI and deployment.",
+    icon: FaCode,
+  },
+  {
+    title: "SaaS Development",
+    description: "Scalable software-as-a-service products: authentication, subscriptions, dashboards, and multi-tenant architecture.",
+    icon: FaCloud,
+  },
+  {
+    title: "AI Integration",
+    description: "Integrating AI and ML capabilities into web apps: chatbots, content generation, and intelligent automation.",
+    icon: FaRobot,
   },
   {
     title: "Frontend Development",
-    description:
-      "Building modern, responsive, and interactive web applications using React.js, Next.js, TypeScript, and Material UI. I create pixel-perfect user interfaces with optimal performance, seamless user experiences, and cross-browser compatibility. From component architecture to state management, I ensure scalable and maintainable code.",
-    icon: <FaCode className="text-4xl" />,
-    gradient: "from-blue-400 to-indigo-600",
-    borderColor: "border-blue-400",
+    description: "Modern, responsive interfaces with React, Next.js, TypeScript, and Material UI. Performance-focused and accessible.",
+    icon: FaCode,
   },
   {
-    title: "Backend Development",
-    description:
-      "Developing robust server-side applications using Node.js and Express.js. I create RESTful APIs, handle database operations with MongoDB, implement authentication and authorization, and ensure secure data handling. Building scalable backend architecture that supports your frontend applications efficiently.",
-    icon: <FaServer className="text-4xl" />,
-    gradient: "from-indigo-400 to-blue-600",
-    borderColor: "border-indigo-400",
+    title: "Backend & APIs",
+    description: "RESTful APIs, authentication, and database design with Node.js, Express, and MongoDB.",
+    icon: FaServer,
+  },
+  {
+    title: "API Integration",
+    description: "Third-party API integration, data sync, and seamless connections between your app and external services.",
+    icon: FaPlug,
   },
   {
     title: "Responsive Design",
-    description:
-      "Creating mobile-first, responsive designs that work flawlessly across all devices and screen sizes. Using modern CSS frameworks like Tailwind CSS and Material UI, I ensure your applications look and function perfectly on desktops, tablets, and mobile devices.",
-    icon: <FaMobileAlt className="text-4xl" />,
-    gradient: "from-cyan-400 to-blue-600",
-    borderColor: "border-cyan-400",
+    description: "Mobile-first, cross-device layouts with Tailwind CSS and component libraries for consistent UX.",
+    icon: FaMobileAlt,
   },
 ];
 
-const Services = () => {
+export default function Services() {
   return (
-    <div id="services" className="mb-32 max-w-[1450px] mx-auto pt-10 px-4 py-16 relative">
-      <FloatingParticles count={15} />
-      <motion.div
-        className="text-center mb-16 relative z-10"
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">
-          <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
-            My Services
-          </span>
-        </h1>
+    <section id="services" className="py-section">
+      <div className="container-narrow px-4">
         <motion.div
-          className="h-1 w-24 bg-gradient-to-r from-cyan-400 to-blue-400 mx-auto mt-4 rounded-full"
-          initial={{ width: 0 }}
-          whileInView={{ width: 96 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        />
-        <p className="text-gray-400 mt-6 text-lg max-w-2xl mx-auto">
-          Crafting digital experiences that combine stunning design with powerful functionality
-        </p>
-      </motion.div>
-
-      <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-8 relative z-10">
-        {services.map((service, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
-          >
-            <ServiceCard
-              title={service.title}
-              description={service.description}
-              icon={service.icon}
-              gradient={service.gradient}
-              borderColor={service.borderColor}
-              delay={index * 0.1}
-            />
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const ServiceCard = ({ title, description, icon, gradient, borderColor, delay }) => (
-  <motion.div
-    className={`relative group rounded-2xl p-8 bg-gradient-to-br from-slate-800/90 via-slate-900/90 to-slate-800/90 text-white shadow-2xl overflow-hidden border border-slate-700/50 backdrop-blur-sm`}
-    initial={{ opacity: 0, y: 50, rotateX: -10 }}
-    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.7, delay, type: "spring", stiffness: 100 }}
-    whileHover={{ scale: 1.03, y: -10, rotateY: 2 }}
-    style={{ transformStyle: "preserve-3d" }}
-  >
-    {/* Animated gradient background */}
-    <motion.div
-      className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
-      animate={{
-        backgroundPosition: ["0% 0%", "100% 100%"],
-      }}
-      transition={{
-        duration: 5,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    />
-    
-    {/* Glowing border effect */}
-    <motion.div
-      className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${gradient} opacity-0 group-hover:opacity-30 blur-xl transition-opacity duration-500`}
-      animate={{
-        opacity: [0, 0.1, 0],
-      }}
-      transition={{
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    />
-    
-    {/* Animated grid pattern */}
-    <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-      <div className="absolute inset-0" style={{
-        backgroundImage: `linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px)`,
-        backgroundSize: '30px 30px',
-      }} />
-    </div>
-
-    {/* Icon Container with 3D effect */}
-    <motion.div
-      className="relative z-10 mb-6"
-      whileHover={{ scale: 1.1, rotateY: 15 }}
-      transition={{ type: "spring", stiffness: 300 }}
-      style={{ transformStyle: "preserve-3d" }}
-    >
-      <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${gradient} shadow-lg`}>
-        <motion.div
-          className="text-white"
-          animate={{ rotate: [0, 5, -5, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="text-center max-w-2xl mx-auto mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
         >
-          {icon}
+          <p className="section-label text-accent mb-3">Services</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+            What I offer
+          </h2>
+          <p className="text-mute-400">
+            Full-stack development, SaaS products, and AI-powered features for businesses and startups.
+          </p>
         </motion.div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8">
+          {services.map(({ title, description, icon: Icon }, index) => (
+            <motion.div
+              key={title}
+              className="rounded-xl border border-white/5 bg-surface-800/60 p-6 hover:border-accent/20 hover:shadow-card-hover transition-all duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: index * 0.05 }}
+            >
+              <div className="inline-flex p-3 rounded-xl bg-accent/10 text-accent mb-4">
+                <Icon className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
+              <p className="text-mute-400 text-sm leading-relaxed">
+                {description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </motion.div>
-
-    {/* Content */}
-    <div className="relative z-10">
-      <motion.h2
-        className="text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: delay + 0.2 }}
-      >
-        {title}
-      </motion.h2>
-      <motion.p
-        className="text-gray-300 leading-relaxed text-justify"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: delay + 0.3 }}
-      >
-        {description}
-      </motion.p>
-    </div>
-
-    {/* Animated corner accent */}
-    <motion.div
-      className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${gradient} opacity-20 rounded-full blur-2xl`}
-      animate={{
-        scale: [1, 1.2, 1],
-        rotate: [0, 90, 0],
-      }}
-      transition={{
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut",
-      }}
-    />
-    
-    {/* Bottom accent line */}
-    <motion.div
-      className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${gradient}`}
-      initial={{ width: 0 }}
-      whileInView={{ width: "100%" }}
-      viewport={{ once: true }}
-      transition={{ duration: 1, delay: delay + 0.5 }}
-    />
-  </motion.div>
-);
-
-export default Services;
+    </section>
+  );
+}
