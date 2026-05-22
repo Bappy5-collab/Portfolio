@@ -3,16 +3,16 @@ import { FaBriefcase } from "react-icons/fa";
 
 const experience = [
   {
-    role: "Front-end Developer",
-    company: "Depth Search Limited",
-    period: "Present",
+    role: "Frontend Developer",
+    company: "ZesXai, Rajshahi, Bangladesh",
+    period: "Jan 2025 – Present",
     points: [
-      "API integration — connecting frontend with RESTful APIs and seamless data flow.",
-      "Building features with Next.js, TypeScript, and Material UI.",
-      "Developing responsive web applications with React.js and Next.js.",
-      "Optimizing applications for performance, speed, and scalability.",
+      "Built and integrated RESTful APIs for smooth frontend-backend communication.",
+      "Developed full-stack applications using Next.js, React.js, Node.js, and MongoDB.",
+      "Created responsive and user-friendly UI with React.js and Material UI.",
+      "Optimized application performance for speed, scalability, and efficiency.",
     ],
-    tags: ["React.js", "Next.js", "TypeScript", "Material UI"],
+    tags: ["Next.js", "React.js", "Node.js", "MongoDB", "Material UI"],
   },
 ];
 
@@ -32,14 +32,14 @@ export default function About() {
             Professional summary
           </h2>
           <p className="text-mute-400 text-lg leading-relaxed mb-6">
-            I'm <span className="text-white font-medium">Chandon Kumar</span>, a web developer from Bangladesh with{" "}
-            <span className="text-accent font-medium">3+ years of experience</span> building modern websites that combine clean design with strong functionality.
+            I'm <span className="text-white font-medium">Chandon Kumar</span>, a Frontend Developer (React / Next.js) from Bangladesh with{" "}
+            <span className="text-accent font-medium">2–3 years of experience</span> building scalable SaaS applications using JavaScript and TypeScript.
           </p>
           <p className="text-mute-400 leading-relaxed mb-10">
-            I specialize in web design and development, turning ideas into functional digital products. I focus on maintainable code, clear architecture, and delivering projects that meet both user and business goals.
+            I'm strong in frontend architecture, performance optimization, and API integration (REST &amp; GraphQL). I have experience working in Agile teams and CI/CD workflows, and I focus on building clean, reusable UI components.
           </p>
           <div className="flex flex-wrap gap-3 mb-12">
-            {["MERN Stack", "Frontend", "UI/UX"].map((tag) => (
+            {["React / Next.js", "TypeScript", "SaaS", "UI/UX"].map((tag) => (
               <span
                 key={tag}
                 className="px-4 py-2 rounded-lg bg-surface-600 border border-white/5 text-mute-400 text-sm font-medium"

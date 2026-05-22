@@ -4,11 +4,15 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { projects, allTechFilters } from "../../../../data/projects";
 import goStoreImage from "../../../../assets/images/go.png";
 import siteScoreImage from "../../../../assets/images/site.png";
+import ecoAiImage from "../../../../assets/images/eco-ai.png";
+import riseAtSevenImage from "../../../../assets/images/rise-at-seven.png";
 
 // Resolve image src: use imported assets for local images, otherwise project.image (or absolute URL for / paths)
 const getImageSrc = (project) => {
   if (project.title === "Go Store") return goStoreImage;
   if (project.title === "SiteScore AI") return siteScoreImage;
+  if (project.title === "Eco AI") return ecoAiImage;
+  if (project.title === "Rise at Seven") return riseAtSevenImage;
   const img = project.image;
   if (img.startsWith("http")) return img;
   if (typeof window !== "undefined" && img.startsWith("/")) return window.location.origin + img;
