@@ -112,6 +112,12 @@ h1, h2, h3 {
   }
 }
 
+/* Hide the native cursor only when the custom cursor is active (fine pointers) */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+
 /* Tech ticker — right-to-left infinite scroll (plain CSS so it never
    depends on Tailwind config regeneration / dev-server restart) */
 @keyframes marquee-rtl {
