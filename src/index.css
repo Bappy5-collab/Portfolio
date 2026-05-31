@@ -3,14 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --color-surface: #0a0b0d;
-  --color-surface-800: #111318;
+  --color-surface: #08090c;
+  --color-surface-800: #0e1014;
   --color-accent: #3b82f6;
   --color-mute: #64748b;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Lenis smooth scroll — disable native smooth so Lenis controls it */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
@@ -20,20 +35,107 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-feature-settings: "ss01", "ss02";
+  overflow-x: hidden;
 }
 
 /* Typography hierarchy */
 h1, h2, h3 {
+  font-family: 'Space Grotesk', 'DM Sans', system-ui, sans-serif;
   @apply font-semibold tracking-tight;
 }
 
-/* Section label (e.g. "About", "Projects") */
-.section-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  font-weight: 500;
+@layer components {
+  /* Section eyebrow label (e.g. "About", "Projects") */
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  /* Numbered mono label — "01 / About" */
+  .section-num {
+    @apply inline-flex items-center gap-2.5 font-mono text-xs tracking-widest uppercase text-mute-500;
+  }
+  .section-num::before {
+    content: "";
+    @apply h-px w-8 bg-gradient-to-r from-accent/60 to-transparent;
+  }
+
+  /* Display heading with gradient sheen */
+  .heading-display {
+    font-family: 'Space Grotesk', 'DM Sans', system-ui, sans-serif;
+    @apply font-semibold tracking-tight text-white;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(110deg, #ffffff 30%, #93c5fd 55%, #3b82f6 80%);
+  }
+
+  /* Primary CTA */
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white
+           bg-accent overflow-hidden transition-all duration-300
+           hover:shadow-[0_8px_30px_-6px_rgba(59,130,246,0.5)] hover:-translate-y-0.5;
+  }
+
+  /* Ghost / secondary button */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white
+           bg-white/[0.03] border border-white/10 backdrop-blur-sm transition-all duration-300
+           hover:border-accent/40 hover:bg-white/[0.06] hover:-translate-y-0.5;
+  }
+
+  /* Glass card base */
+  .card-glass {
+    @apply relative rounded-2xl border border-white/[0.07] bg-surface-800/70 backdrop-blur-sm;
+  }
+
+  /* Pill / chip */
+  .chip {
+    @apply inline-flex items-center rounded-lg border border-white/[0.07] bg-white/[0.03] px-3 py-1.5
+           text-xs font-medium text-mute-400;
+  }
+}
+
+@layer utilities {
+  /* Masked grid that fades toward edges */
+  .mask-fade {
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 50%, transparent 100%);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 50%, transparent 100%);
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  }
+}
+
+/* Tech ticker — right-to-left infinite scroll (plain CSS so it never
+   depends on Tailwind config regeneration / dev-server restart) */
+@keyframes marquee-rtl {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 30s linear infinite;
+  will-change: transform;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Fine film grain overlay across the whole app */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Subtle focus for accessibility */
@@ -49,7 +151,7 @@ h1, h2, h3 {
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
   background-color: var(--color-surface-800);
@@ -57,13 +159,23 @@ h1, h2, h3 {
 ::-webkit-scrollbar-thumb {
   background-color: #252a35;
   border-radius: 9999px;
+  border: 2px solid var(--color-surface-800);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(59, 130, 246, 0.5);
+  background-color: rgba(59, 130, 246, 0.6);
 }
 
 /* Container utility */
 .container-narrow {
   width: min(1280px, 92vw);
   @apply mx-auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

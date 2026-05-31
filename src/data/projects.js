@@ -6,7 +6,7 @@ export const projects = [
     image: "/images/site.png",
     liveLink: "https://site-score.vercel.app/",
     codeLink: "https://github.com/Bappy5-collab/site-score",
-    techStack: ["Next.js", "React", "Node.js", "Express", "MongoDB", "AI"],
+    techStack: ["Next.js", "React", "Node.js", "Express", "Supabase", "AI"],
   },
   {
     id: 10,
@@ -42,7 +42,7 @@ export const projects = [
     image: "https://i.ibb.co.com/4RYHDcgY/Screenshot-2025-10-31-185529.png",
     liveLink: "https://www.perfect-ai.com",
     codeLink: "",
-    techStack: ["React", "AI", "Next.js"],
+    techStack: ["React", "AI", "Next.js", "Material-UI"],
   },
   {
     id: 3,

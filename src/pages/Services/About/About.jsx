@@ -1,97 +1,137 @@
 import { motion } from "framer-motion";
-import { FaBriefcase } from "react-icons/fa";
+import { FaBriefcase, FaCheckCircle } from "react-icons/fa";
+import SectionHeading from "../../../components/SectionHeading";
+import Reveal from "../../../components/Reveal";
 
 const experience = [
   {
     role: "Frontend Developer",
-    company: "ZesXai, Rajshahi, Bangladesh",
+    company: "ZesXai",
+    location: "Rajshahi, Bangladesh",
     period: "Jan 2025 – Present",
     points: [
-      "Built and integrated RESTful APIs for smooth frontend-backend communication.",
+      "Built and integrated RESTful APIs for smooth frontend–backend communication.",
       "Developed full-stack applications using Next.js, React.js, Node.js, and MongoDB.",
-      "Created responsive and user-friendly UI with React.js and Material UI.",
+      "Created responsive, user-friendly UI with React.js and Material UI.",
       "Optimized application performance for speed, scalability, and efficiency.",
     ],
     tags: ["Next.js", "React.js", "Node.js", "MongoDB", "Material UI"],
   },
 ];
 
+const highlights = [
+  "Frontend architecture & reusable component systems",
+  "Performance optimization & Core Web Vitals",
+  "REST & GraphQL API integration",
+  "Agile workflows and CI/CD pipelines",
+];
+
+const ease = [0.22, 1, 0.36, 1];
+
 export default function About() {
   return (
-    <section id="about" className="py-section bg-surface-800/40">
-      <div className="container-narrow px-4 space-y-12">
-        <motion.div
-          className="max-w-3xl"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="section-label text-accent mb-3">About</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-6">
-            Professional summary
-          </h2>
-          <p className="text-mute-400 text-lg leading-relaxed mb-6">
-            I'm <span className="text-white font-medium">Chandon Kumar</span>, a Frontend Developer (React / Next.js) from Bangladesh with{" "}
-            <span className="text-accent font-medium">2–3 years of experience</span> building scalable SaaS applications using JavaScript and TypeScript.
-          </p>
-          <p className="text-mute-400 leading-relaxed mb-10">
-            I'm strong in frontend architecture, performance optimization, and API integration (REST &amp; GraphQL). I have experience working in Agile teams and CI/CD workflows, and I focus on building clean, reusable UI components.
-          </p>
-          <div className="flex flex-wrap gap-3 mb-12">
-            {["React / Next.js", "TypeScript", "SaaS", "UI/UX"].map((tag) => (
-              <span
-                key={tag}
-                className="px-4 py-2 rounded-lg bg-surface-600 border border-white/5 text-mute-400 text-sm font-medium"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+    <section id="about" className="relative py-section overflow-hidden">
+      {/* subtle glow */}
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-accent/5 rounded-full blur-[120px]" />
 
-        {/* Experience timeline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        >
-          <p className="section-label text-accent mb-4">Experience</p>
-          <div className="relative pl-8 border-l border-white/10 space-y-10">
-            {experience.map((job, i) => (
-              <div key={i} className="relative">
-                <div className="absolute -left-8 top-0 w-3 h-3 rounded-full bg-accent border-4 border-surface-800" />
-                <div className="bg-surface-700/50 rounded-xl border border-white/5 p-6 sm:p-8 hover:border-accent/20 transition-colors">
-                  <div className="flex flex-wrap items-center gap-2 mb-4">
-                    <FaBriefcase className="text-accent w-5 h-5 shrink-0" />
-                    <h3 className="text-xl font-semibold text-white">{job.role}</h3>
-                    <span className="text-mute-500 text-sm">· {job.company}</span>
-                  </div>
-                  <p className="text-mute-500 text-sm mb-4">{job.period}</p>
-                  <ul className="space-y-2 mb-4">
-                    {job.points.map((point, j) => (
-                      <li key={j} className="text-mute-400 text-sm sm:text-base leading-relaxed flex gap-2">
-                        <span className="text-accent mt-1.5 shrink-0">▹</span>
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex flex-wrap gap-2">
-                    {job.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 rounded-md bg-accent/10 text-accent text-xs font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+      <div className="container-narrow px-4 relative z-10">
+        <SectionHeading
+          num="01"
+          label="About"
+          title="Building with"
+          highlight="intent & craft."
+          align="left"
+          className="mb-14"
+        />
+
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-start">
+          {/* Left: narrative */}
+          <Reveal>
+            <p className="section-num mb-6">
+              <span className="text-accent">01</span>
+              <span>Profile</span>
+            </p>
+            <p className="text-mute-400 text-lg leading-relaxed mb-6">
+              I&apos;m <span className="text-white font-medium">Chandon Kumar</span>, a Frontend
+              Developer (React / Next.js) from Bangladesh with{" "}
+              <span className="text-accent font-medium">3+ years of experience</span> building
+              scalable SaaS applications in JavaScript and TypeScript.
+            </p>
+            <p className="text-mute-400 leading-relaxed mb-8">
+              I care about the details others skip — accessible, reusable component systems,
+              measurable performance, and interfaces that feel effortless. I&apos;ve shipped
+              production apps in Agile teams with CI/CD workflows from first commit to deploy.
+            </p>
+
+            <ul className="grid sm:grid-cols-2 gap-3 mb-8">
+              {highlights.map((h, i) => (
+                <motion.li
+                  key={h}
+                  className="flex items-start gap-3 text-sm text-mute-400"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08, ease }}
+                >
+                  <FaCheckCircle className="text-accent/80 w-4 h-4 mt-0.5 shrink-0" />
+                  {h}
+                </motion.li>
+              ))}
+            </ul>
+
+            <div className="flex flex-wrap gap-2.5">
+              {["React / Next.js", "TypeScript", "SaaS", "UI/UX"].map((tag) => (
+                <span key={tag} className="chip">{tag}</span>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Right: experience timeline */}
+          <Reveal delay={0.1}>
+            <p className="section-num mb-6">
+              <span className="text-accent">02</span>
+              <span>Experience</span>
+            </p>
+            <div className="relative pl-8 border-l border-white/10 space-y-8">
+              {experience.map((job, i) => (
+                <div key={i} className="relative">
+                  <span className="absolute -left-[2.15rem] top-1.5 flex h-4 w-4 items-center justify-center">
+                    <span className="absolute h-4 w-4 rounded-full bg-accent/20 animate-ping" />
+                    <span className="relative h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-surface-900" />
+                  </span>
+                  <div className="card-glass p-6 sm:p-7 transition-colors hover:border-accent/20">
+                    <div className="flex items-center gap-2.5 mb-1.5">
+                      <FaBriefcase className="text-accent w-4 h-4 shrink-0" />
+                      <h3 className="text-lg font-semibold text-white">{job.role}</h3>
+                    </div>
+                    <p className="text-sm text-mute-400 mb-1">
+                      {job.company} · <span className="text-mute-500">{job.location}</span>
+                    </p>
+                    <p className="font-mono text-xs text-mute-500 mb-4">{job.period}</p>
+                    <ul className="space-y-2.5 mb-5">
+                      {job.points.map((point, j) => (
+                        <li key={j} className="flex gap-2.5 text-sm leading-relaxed text-mute-400">
+                          <span className="text-accent mt-1 shrink-0">▹</span>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-2">
+                      {job.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md bg-accent/10 px-2.5 py-1 text-xs font-medium text-accent"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

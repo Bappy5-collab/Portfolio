@@ -1,7 +1,8 @@
 import { useState, useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { projects, allTechFilters } from "../../../../data/projects";
+import SectionHeading from "../../../../components/SectionHeading";
 import goStoreImage from "../../../../assets/images/go.png";
 import siteScoreImage from "../../../../assets/images/site.png";
 import ecoAiImage from "../../../../assets/images/eco-ai.png";
@@ -19,6 +20,8 @@ const getImageSrc = (project) => {
   return img;
 };
 
+const ease = [0.22, 1, 0.36, 1];
+
 export default function Project() {
   const [filter, setFilter] = useState("All");
 
@@ -27,120 +30,128 @@ export default function Project() {
     return projects.filter((p) => p.techStack.includes(filter));
   }, [filter]);
 
-  return (
-    <section id="projects" className="py-section bg-surface-800/40">
-      <div className="container-narrow px-4">
-        <motion.div
-          className="text-center max-w-2xl mx-auto mb-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="section-label text-accent mb-3">Projects</p>
-          <h2 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
-            Selected work
-          </h2>
-          <p className="text-mute-400 mb-8">
-            A selection of recent projects with live demos and source code.
-          </p>
+  const filters = ["All", ...allTechFilters];
 
-          <div className="flex flex-wrap justify-center gap-2">
-            <button
-              type="button"
-              onClick={() => setFilter("All")}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                filter === "All"
-                  ? "bg-accent text-white"
-                  : "bg-surface-600 text-mute-400 hover:text-white border border-white/5"
-              }`}
-            >
-              All
-            </button>
-            {allTechFilters.map((tech) => (
+  return (
+    <section id="projects" className="relative py-section overflow-hidden">
+      <div className="pointer-events-none absolute bottom-0 right-0 w-[500px] h-[400px] bg-accent/5 rounded-full blur-[120px]" />
+
+      <div className="container-narrow px-4 relative z-10">
+        <SectionHeading
+          num="04"
+          label="Projects"
+          title="Selected"
+          highlight="work."
+          description="A selection of recent projects with live demos and source code."
+          className="mb-10"
+        />
+
+        {/* Filters */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
+          {filters.map((tech) => {
+            const isActive = filter === tech;
+            return (
               <button
                 key={tech}
                 type="button"
                 onClick={() => setFilter(tech)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  filter === tech
-                    ? "bg-accent text-white"
-                    : "bg-surface-600 text-mute-400 hover:text-white border border-white/5"
+                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  isActive ? "text-white" : "text-mute-400 hover:text-white"
                 }`}
               >
-                {tech}
+                {isActive && (
+                  <motion.span
+                    layoutId="filter-pill"
+                    className="absolute inset-0 rounded-full bg-accent shadow-[0_4px_20px_-4px_rgba(59,130,246,0.6)]"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative z-10">{tech}</span>
               </button>
-            ))}
-          </div>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8">
-          {filtered.map((project, index) => (
-            <motion.article
-              key={project.id}
-              className="group rounded-xl border border-white/5 bg-surface-800/60 overflow-hidden hover:border-accent/20 hover:shadow-card-hover transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: index * 0.06 }}
-            >
-              <div className="aspect-video overflow-hidden bg-surface-700">
-                <img
-                  src={getImageSrc(project)}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect fill='%23111318' width='800' height='450'/%3E%3Ctext fill='%2364748b' font-family='system-ui' font-size='22' x='400' y='225' text-anchor='middle' dominant-baseline='middle'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E`;
-                  }}
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-accent transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-mute-400 text-sm leading-relaxed mb-4 line-clamp-2">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.techStack.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-1 rounded-md bg-surface-600/80 text-mute-400 text-xs font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-3">
-                  {project.liveLink && (
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm font-medium hover:bg-accent-600 transition-colors"
-                    >
-                      <FaExternalLinkAlt className="w-3.5 h-3.5" />
-                      Live
-                    </a>
-                  )}
-                  {project.codeLink && (
-                    <a
-                      href={project.codeLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface-600 text-mute-400 text-sm font-medium border border-white/5 hover:text-white hover:border-accent/30 transition-colors"
-                    >
-                      <FaGithub className="w-4 h-4" />
-                      Code
-                    </a>
-                  )}
-                </div>
-              </div>
-            </motion.article>
-          ))}
+            );
+          })}
         </div>
+
+        <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-8">
+          <AnimatePresence mode="popLayout">
+            {filtered.map((project, index) => (
+              <motion.article
+                key={project.id}
+                layout
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: (index % 3) * 0.06, ease }}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-surface-800/70 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/25 hover:shadow-card-hover"
+              >
+                {/* Image */}
+                <div className="relative aspect-video overflow-hidden bg-surface-700">
+                  <img
+                    src={getImageSrc(project)}
+                    alt={project.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450' viewBox='0 0 800 450'%3E%3Crect fill='%23111318' width='800' height='450'/%3E%3Ctext fill='%2364748b' font-family='system-ui' font-size='22' x='400' y='225' text-anchor='middle' dominant-baseline='middle'%3E${encodeURIComponent(project.title)}%3C/text%3E%3C/svg%3E`;
+                    }}
+                  />
+                  {/* gradient veil */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-900 via-surface-900/10 to-transparent opacity-80" />
+                  {/* hover quick-links */}
+                  <div className="absolute inset-x-0 bottom-0 flex translate-y-3 items-center gap-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    {project.liveLink && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg bg-accent px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:bg-accent-600"
+                      >
+                        <FaExternalLinkAlt className="h-3 w-3" /> Live
+                      </a>
+                    )}
+                    {project.codeLink && (
+                      <a
+                        href={project.codeLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-lg bg-surface-900/80 px-3.5 py-2 text-xs font-semibold text-white backdrop-blur-sm border border-white/10 transition-colors hover:border-accent/40"
+                      >
+                        <FaGithub className="h-3.5 w-3.5" /> Code
+                      </a>
+                    )}
+                  </div>
+                </div>
+
+                {/* Body */}
+                <div className="flex flex-1 flex-col p-5">
+                  <h3 className="mb-2 text-lg font-semibold text-white transition-colors group-hover:text-accent">
+                    {project.title}
+                  </h3>
+                  <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-mute-400">
+                    {project.description}
+                  </p>
+                  <div className="mt-auto flex flex-nowrap items-center gap-2 overflow-hidden">
+                    {project.techStack.slice(0, 4).map((tech) => (
+                      <span
+                        key={tech}
+                        className="whitespace-nowrap rounded-md bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-mute-400"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.techStack.length > 4 && (
+                      <span className="whitespace-nowrap rounded-md bg-white/[0.04] px-2.5 py-1 text-xs font-medium text-mute-400">
+                        +{project.techStack.length - 4}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </motion.article>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );
