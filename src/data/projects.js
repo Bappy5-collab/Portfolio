@@ -3,7 +3,7 @@ export const projects = [
     id: 9,
     title: "SiteScore AI",
     description: "Full-stack AI-powered Website Audit & Growth Intelligence SaaS. Analyzes websites, generates SEO & performance scores, and delivers real-time AI-driven suggestions with growth tracking and action plans.",
-    image: "/images/site.png",
+    image: "/images/site_score.png",
     liveLink: "https://site-score.vercel.app/",
     codeLink: "https://github.com/Bappy5-collab/site-score",
     techStack: ["Next.js", "React", "Node.js", "Express", "Supabase", "AI"],

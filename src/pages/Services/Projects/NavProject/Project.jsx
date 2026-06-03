@@ -4,7 +4,7 @@ import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { projects, allTechFilters } from "../../../../data/projects";
 import SectionHeading from "../../../../components/SectionHeading";
 import goStoreImage from "../../../../assets/images/go.png";
-import siteScoreImage from "../../../../assets/images/site.png";
+import siteScoreImage from "../../../../assets/images/site_score.png";
 import ecoAiImage from "../../../../assets/images/eco-ai.png";
 import riseAtSevenImage from "../../../../assets/images/rise-at-seven.png";
 
@@ -19,6 +19,10 @@ const getImageSrc = (project) => {
   if (typeof window !== "undefined" && img.startsWith("/")) return window.location.origin + img;
   return img;
 };
+
+// Some screenshots are wider than the 16:9 card; show them fully instead of cropping the sides
+const getImageFit = (project) =>
+  project.title === "SiteScore AI" ? "object-contain" : "object-cover";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -90,7 +94,7 @@ export default function Project() {
                   <img
                     src={getImageSrc(project)}
                     alt={project.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`h-full w-full ${getImageFit(project)} transition-transform duration-700 group-hover:scale-105`}
                     loading="lazy"
                     onError={(e) => {
                       e.target.onerror = null;
