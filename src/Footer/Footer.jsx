@@ -41,7 +41,7 @@ export default function Footer() {
               Chandon<span className="text-accent">.</span>
             </a>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-mute-400">
-              Full-Stack Developer crafting fast, modern web applications. Open to freelance and
+              Full Stack Engineer crafting fast, modern web applications. Open to freelance and
               full-time opportunities.
             </p>
             <a

@@ -11,20 +11,20 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Chandon Kumar — Full-Stack Developer</title>
+        <title>Chandon Kumar — Full Stack Engineer</title>
         <meta
           name="description"
-          content="Professional portfolio of Chandon Kumar. Full-stack developer specializing in React, Next.js, MERN stack, SaaS, and AI integration. Available for hire."
+          content="Professional portfolio of Chandon Kumar. Full Stack Engineer specializing in React, Next.js, MERN stack, SaaS, and AI integration. Available for hire."
         />
         <link rel="canonical" href="https://chandon-kumar-portfolio.vercel.app/" />
-        <meta property="og:title" content="Chandon Kumar — Full-Stack Developer" />
+        <meta property="og:title" content="Chandon Kumar — Full Stack Engineer" />
         <meta
           property="og:description"
-          content="Full-stack developer: React, Next.js, MERN stack. Portfolio, projects, and contact."
+          content="Full Stack Engineer: React, Next.js, MERN stack. Portfolio, projects, and contact."
         />
         <meta property="og:url" content="https://chandon-kumar-portfolio.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Chandon Kumar — Full-Stack Developer" />
+        <meta name="twitter:title" content="Chandon Kumar — Full Stack Engineer" />
       </Helmet>
       <motion.div
         initial={{ opacity: 0 }}

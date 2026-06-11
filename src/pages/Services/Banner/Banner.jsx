@@ -59,7 +59,7 @@ export default function Banner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05, ease }}
           >
-            <span>Full-Stack Developer · React / Next.js</span>
+            <span>Full Stack Engineer · React / Next.js</span>
           </motion.p>
 
           <motion.h1
@@ -165,7 +165,7 @@ export default function Banner() {
             {/* Floating chip */}
             <div className="absolute -bottom-4 -left-4 sm:-left-6 rounded-xl border border-white/10 bg-surface-800/90 backdrop-blur-md px-4 py-3 shadow-card">
               <p className="font-mono text-[0.65rem] uppercase tracking-widest text-mute-500">Currently</p>
-              <p className="text-sm font-semibold text-white">Frontend @ ZesXai</p>
+              <p className="text-sm font-semibold text-white">Full Stack Engineer @ ZesXai</p>
             </div>
           </div>
         </motion.div>

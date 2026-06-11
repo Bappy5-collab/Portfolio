@@ -117,7 +117,7 @@ export default function Contact() {
           >
             <div className="card-glass p-6">
               <h3 className="text-lg font-semibold text-white">Chandon Kumar</h3>
-              <p className="text-sm text-mute-400">Full-Stack Developer · Bangladesh</p>
+              <p className="text-sm text-mute-400">Full Stack Engineer · Bangladesh</p>
             </div>
 
             <a href="tel:+8801794912083" className="card-glass flex items-center gap-4 p-5 transition-colors hover:border-accent/25">

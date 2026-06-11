@@ -8,6 +8,7 @@ export const skillCategories = [
     items: [
       "React.js",
       "Next.js",
+      "React Native",
       "TypeScript",
       "JavaScript (ES6+)",
       "Vue.js",

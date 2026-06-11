@@ -5,7 +5,7 @@ import Reveal from "../../../components/Reveal";
 
 const experience = [
   {
-    role: "Frontend Developer",
+    role: "Full Stack Engineer",
     company: "ZesXai",
     location: "Rajshahi, Bangladesh",
     period: "Dec 2023 – Present",
@@ -52,8 +52,8 @@ export default function About() {
               <span>Profile</span>
             </p>
             <p className="text-mute-400 text-lg leading-relaxed mb-6">
-              I&apos;m <span className="text-white font-medium">Chandon Kumar</span>, a Frontend
-              Developer (React / Next.js) from Bangladesh with{" "}
+              I&apos;m <span className="text-white font-medium">Chandon Kumar</span>, a Full Stack
+              Engineer (React / Next.js) from Bangladesh with{" "}
               <span className="text-accent font-medium">3+ years of experience</span> building
               scalable SaaS applications in JavaScript and TypeScript.
             </p>
