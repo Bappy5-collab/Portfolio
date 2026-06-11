@@ -8,7 +8,7 @@ const experience = [
     role: "Frontend Developer",
     company: "ZesXai",
     location: "Rajshahi, Bangladesh",
-    period: "Jan 2025 – Present",
+    period: "Dec 2023 – Present",
     points: [
       "Built and integrated RESTful APIs for smooth frontend–backend communication.",
       "Developed full-stack applications using Next.js, React.js, Node.js, and MongoDB.",
