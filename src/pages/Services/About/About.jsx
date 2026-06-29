@@ -10,12 +10,12 @@ const experience = [
     location: "Rajshahi, Bangladesh",
     period: "Dec 2023 – Present",
     points: [
-      "Built and integrated RESTful APIs for smooth frontend–backend communication.",
-      "Developed full-stack applications using Next.js, React.js, Node.js, and MongoDB.",
-      "Created responsive, user-friendly UI with React.js and Material UI.",
-      "Optimized application performance for speed, scalability, and efficiency.",
+      "Built production-ready React.js and Next.js applications in a 5+ member team.",
+      "Developed 100+ Laravel REST APIs using Routing, Controllers, Authentication, and Eloquent ORM.",
+      "Integrated React frontends with Laravel and Node.js/Express.js APIs, resolving frontend and backend issues.",
+      "Converted Figma designs into responsive UIs while optimizing performance and maintaining codebases.",
     ],
-    tags: ["Next.js", "React.js", "Node.js", "MongoDB", "Material UI"],
+    tags: ["React.js", "Next.js", "Laravel", "Node.js", "Express.js"],
   },
 ];
 
