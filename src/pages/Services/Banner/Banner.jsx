@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaFacebook, FaArrowRight } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFacebook, FaArrowRight, FaRocket } from "react-icons/fa";
 import AuroraBackground from "../../../components/AuroraBackground";
 import MagneticButton from "../../../components/MagneticButton";
 import CountUp from "../../../components/CountUp";
@@ -37,21 +37,35 @@ export default function Banner() {
       <div className="container-narrow relative z-10 px-4 grid lg:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-10 items-center">
         {/* Content */}
         <div className="order-2 lg:order-1">
-          {/* Status badge */}
-          <motion.div
-            className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 backdrop-blur-sm mb-7"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease }}
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
-            </span>
-            <span className="text-xs font-medium text-mute-400">
-              Available for freelance &amp; full-time
-            </span>
-          </motion.div>
+          {/* Status badges */}
+          <div className="flex flex-wrap items-center gap-2.5 mb-7">
+            <motion.div
+              className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.03] px-3.5 py-1.5 backdrop-blur-sm"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease }}
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+              </span>
+              <span className="text-xs font-medium text-mute-400">
+                Available for freelance &amp; full-time
+              </span>
+            </motion.div>
+
+            <motion.div
+              className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3.5 py-1.5 backdrop-blur-sm"
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.08, ease }}
+            >
+              <FaRocket className="h-3 w-3 text-accent" />
+              <span className="text-xs font-medium text-accent">
+                Founder of Opus Site Score
+              </span>
+            </motion.div>
+          </div>
 
           <motion.p
             className="section-num mb-5"
