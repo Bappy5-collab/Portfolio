@@ -20,7 +20,7 @@ const Resume = () => {
             // Create a temporary anchor element to trigger download
             const link = document.createElement('a');
             link.href = downloadUrl;
-            link.setAttribute('download', 'Chandon-Kumar-Resume.pdf');
+            link.setAttribute('download', 'Chandon-Kumar-Bappy-Resume.pdf');
             link.setAttribute('target', '_blank');
             link.setAttribute('rel', 'noopener noreferrer');
             document.body.appendChild(link);

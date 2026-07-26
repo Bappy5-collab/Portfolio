@@ -68,7 +68,7 @@ export default function Banner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.12, ease }}
           >
-            <span className="block text-white">Hi, I&apos;m Chandon —</span>
+            <span className="block text-white">Hi, I&apos;m Chandon Kumar Bappy —</span>
             <span className="block gradient-text">I craft fast, modern web apps.</span>
           </motion.h1>
 
@@ -158,7 +158,7 @@ export default function Banner() {
             <div className="relative rounded-[1.6rem] p-px bg-gradient-to-br from-white/20 via-white/5 to-transparent">
               <img
                 src="https://i.ibb.co.com/535jf96/chandon-fiver-1-Picsart-Background-Changer.png"
-                alt="Chandon Kumar"
+                alt="Chandon Kumar Bappy"
                 className="w-64 h-72 sm:w-80 sm:h-96 rounded-[1.55rem] object-cover object-top bg-surface-700"
               />
             </div>
