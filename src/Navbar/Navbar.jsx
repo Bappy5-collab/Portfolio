@@ -59,14 +59,14 @@ export default function Navbar() {
         <a
           href="#home"
           onClick={(e) => { scrollToSection(e, "home"); setMobileOpen(false); }}
-          className="group flex items-center gap-2.5 text-lg font-semibold text-white"
+          className="group flex items-center gap-2.5 text-base sm:text-lg font-semibold text-white"
         >
           <img
             src={logo}
-            alt="Chandon Kumar logo"
+            alt="Chandon Kumar Bappy logo"
             className="h-9 w-9 rounded-full object-cover ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="font-display tracking-tight">Chandon<span className="text-accent">.</span></span>
+          <span className="font-display tracking-tight whitespace-nowrap">Chandon Kumar Bappy<span className="text-accent">.</span></span>
         </a>
 
         {/* Desktop nav — segmented pill */}

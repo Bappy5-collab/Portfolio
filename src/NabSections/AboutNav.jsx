@@ -21,10 +21,10 @@ const AboutNav = () => {
           <div>
             <p className="font-bold text-xm mb-10">
               <span className="text-3xl text-green-500"> Hello!</span> I'm
-              Chandon Kumar. I'm a professional web developer.Right now i'm
-              develop a MERN Stack projetcs. Hello! I'm Chandon Kumar. I'm a
+              Chandon Kumar Bappy. I'm a professional web developer.Right now i'm
+              develop a MERN Stack projetcs. Hello! I'm Chandon Kumar Bappy. I'm a
               professional web developer.Right now i'm develop a MERN Stack
-              projetcs. Hello! I'm Chandon Kumar. I'm a professional web
+              projetcs. Hello! I'm Chandon Kumar Bappy. I'm a professional web
             
             </p>
             <Tabs>

@@ -35,10 +35,10 @@ export default function Footer() {
             >
               <img
                 src={logo}
-                alt="Chandon Kumar logo"
+                alt="Chandon Kumar Bappy logo"
                 className="h-10 w-10 rounded-full object-cover ring-1 ring-white/10"
               />
-              Chandon<span className="text-accent">.</span>
+              Chandon Kumar Bappy<span className="text-accent">.</span>
             </a>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-mute-400">
               Full Stack Engineer crafting fast, modern web applications. Open to freelance and
@@ -99,7 +99,7 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-6 sm:flex-row">
           <p className="text-sm text-mute-500">
-            © {new Date().getFullYear()} Chandon Kumar. Designed &amp; built with care.
+            © {new Date().getFullYear()} Chandon Kumar Bappy. Designed &amp; built with care.
           </p>
           <button
             type="button"

@@ -52,8 +52,9 @@ export default function About() {
               <span>Profile</span>
             </p>
             <p className="text-mute-400 text-lg leading-relaxed mb-6">
-              I&apos;m <span className="text-white font-medium">Chandon Kumar</span>, a Full Stack
-              Engineer (React / Next.js) from Bangladesh with{" "}
+              I&apos;m <span className="text-white font-medium">Chandon Kumar Bappy</span>, a Full Stack
+              Engineer (React / Next.js) from Bangladesh and{" "}
+              <span className="text-white font-medium">Founder of Opus Site Score</span>, with{" "}
               <span className="text-accent font-medium">3+ years of experience</span> building
               scalable SaaS applications in JavaScript and TypeScript.
             </p>
@@ -80,7 +81,7 @@ export default function About() {
             </ul>
 
             <div className="flex flex-wrap gap-2.5">
-              {["React / Next.js", "TypeScript", "SaaS", "UI/UX"].map((tag) => (
+              {["Founder of Opus Site Score", "React / Next.js", "TypeScript", "SaaS", "UI/UX"].map((tag) => (
                 <span key={tag} className="chip">{tag}</span>
               ))}
             </div>

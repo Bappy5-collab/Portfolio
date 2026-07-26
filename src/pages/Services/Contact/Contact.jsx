@@ -116,7 +116,7 @@ export default function Contact() {
             transition={{ duration: 0.55, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="card-glass p-6">
-              <h3 className="text-lg font-semibold text-white">Chandon Kumar</h3>
+              <h3 className="text-lg font-semibold text-white">Chandon Kumar Bappy</h3>
               <p className="text-sm text-mute-400">Full Stack Engineer · Bangladesh</p>
             </div>
 
