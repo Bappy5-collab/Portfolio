@@ -171,7 +171,7 @@ export default function Banner() {
             <div className="absolute inset-0 rounded-[1.6rem] bg-accent/20 blur-2xl scale-95" />
             <div className="relative rounded-[1.6rem] p-px bg-gradient-to-br from-white/20 via-white/5 to-transparent">
               <img
-                src="https://i.ibb.co.com/535jf96/chandon-fiver-1-Picsart-Background-Changer.png"
+                src="/images/chandon-kumar-bappy.png"
                 alt="Chandon Kumar Bappy"
                 className="w-64 h-72 sm:w-80 sm:h-96 rounded-[1.55rem] object-cover object-top bg-surface-700"
               />
