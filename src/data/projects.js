@@ -1,5 +1,18 @@
 export const projects = [
   {
+    id: 12,
+    title: "AI DFT Platform",
+    status: "in-development",
+    category: "Full-stack / AI + Scientific Computing",
+    description: "An AI-assisted platform for running and analyzing DFT (Density Functional Theory) materials-science calculations — 3D crystal structure visualization, AI-generated input parameters, real-time job monitoring, and result analytics, built on top of Quantum ESPRESSO.",
+    longDescription: "A full-stack platform that helps researchers set up, run, and interpret DFT calculations without wrestling with raw input files. Features include a 3D crystal structure viewer (Three.js), an AI-assisted input parameter generator with smart defaults, real-time job progress tracking, interactive charts for band structure/DOS/phonon/convergence data, AI-powered result explanations and error diagnosis, a markdown research workspace, semantic literature search (RAG + pgvector), role-based team access, and usage-based billing. Currently integrating real Quantum ESPRESSO execution and preparing for HPC-scale deployment (Kubernetes/Slurm).",
+    image: "/images/DFT-image.png",
+    liveLink: "https://max-code-web-ay18.vercel.app/",
+    // TODO: paste the GitHub URL once the repo is public (an empty string hides the Code button)
+    codeLink: "",
+    techStack: ["Next.js 14", "TypeScript", "Material UI", "Supabase (Postgres + Auth + Realtime)", "Prisma", "Python", "FastAPI", "ASE", "pymatgen", "Quantum ESPRESSO", "Three.js / React Three Fiber", "BullMQ", "Redis", "Claude API", "Stripe", "Turborepo", "Docker"],
+  },
+  {
     id: 9,
     title: "SiteScore AI",
     description: "Full-stack AI-powered Website Audit & Growth Intelligence SaaS. Analyzes websites, generates SEO & performance scores, and delivers real-time AI-driven suggestions with growth tracking and action plans.",
