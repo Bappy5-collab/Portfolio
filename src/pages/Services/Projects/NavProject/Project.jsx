@@ -7,6 +7,7 @@ import goStoreImage from "../../../../assets/images/go.png";
 import siteScoreImage from "../../../../assets/images/site_score.png";
 import ecoAiImage from "../../../../assets/images/eco-ai.png";
 import riseAtSevenImage from "../../../../assets/images/rise-at-seven.png";
+import dftImage from "../../../../assets/images/DFT-image.png";
 
 // Resolve image src: use imported assets for local images, otherwise project.image (or absolute URL for / paths)
 const getImageSrc = (project) => {
@@ -14,6 +15,7 @@ const getImageSrc = (project) => {
   if (project.title === "SiteScore AI") return siteScoreImage;
   if (project.title === "Eco AI") return ecoAiImage;
   if (project.title === "Rise at Seven") return riseAtSevenImage;
+  if (project.title === "AI DFT Platform") return dftImage;
   const img = project.image;
   if (img.startsWith("http")) return img;
   if (typeof window !== "undefined" && img.startsWith("/")) return window.location.origin + img;
@@ -103,6 +105,12 @@ export default function Project() {
                   />
                   {/* gradient veil */}
                   <div className="absolute inset-0 bg-gradient-to-t from-surface-900 via-surface-900/10 to-transparent opacity-80" />
+                  {project.status === "in-development" && (
+                    <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-surface-900/80 px-2.5 py-1 text-xs font-semibold text-amber-300 backdrop-blur-sm">
+                      <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
+                      In Development
+                    </span>
+                  )}
                   {/* hover quick-links */}
                   <div className="absolute inset-x-0 bottom-0 flex translate-y-3 items-center gap-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                     {project.liveLink && (
